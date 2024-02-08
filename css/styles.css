@@ -67,7 +67,7 @@ nav {
   }
 }
 
-@media only screen and (max-width: 786px) {
+@media only screen and (min-width: 501px) and (max-width: 785px) {
   nav {
     width: 100%;
   }
@@ -78,6 +78,26 @@ nav {
     width: 100%;
     position: absolute;
     left: 5%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  nav {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+  }
+  nav span {
+    display: none;
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+    flex: 1 1 auto;
+  }
+
+  nav a::before {
+    display: none;
   }
 }
 
@@ -142,9 +162,6 @@ section {
 
 section:nth-of-type(even) {
   text-align: right;
-}
-
-@media only screen and (max-width: 600px) {
 }
 
 section::before {
@@ -233,6 +250,12 @@ main .repo-list {
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
   main .repo-list {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main .repo-list {
+    grid-template-columns: 1fr;
   }
 }
 
