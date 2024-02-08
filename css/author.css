@@ -1,0 +1,84 @@
+.author-card {
+  width: 30%;
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 22px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .author-card {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .author-card {
+    width: 80%;
+  }
+}
+
+.author-card h4 {
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0.2em;
+  margin-bottom: 20px;
+}
+
+.author-card .name {
+  font-size: 20px;
+  color: #000;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.author-card .avatar-wrapper {
+  width: 25%;
+  margin: 20px auto;
+}
+
+.author-card img {
+  width: 100%;
+}
+
+.author-card .self-intro {
+  font-size: 16px;
+  color: rgb(173, 173, 173);
+  margin: 20px auto;
+}
+
+.author-card .interaction {
+  margin: 10px auto;
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .author-card .interaction {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .author-card .interaction {
+    width: 80%;
+  }
+}
+
+.author-card .interaction i {
+  font-size: 22px;
+  background-color: #000;
+
+  color: #fff;
+  vertical-align: bottom;
+  border-radius: 50%;
+  border: #000 3px solid;
+}
+
+.author-card .interaction i:hover {
+  background-color: #80c0a4;
+  cursor: pointer;
+  border: #80c0a4 3px solid;
+}

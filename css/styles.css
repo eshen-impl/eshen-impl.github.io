@@ -1,0 +1,252 @@
+@import url(./card.css);
+@import url(./author.css);
+@import url(./repo.css);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(0deg, #80c0a4, #5e9189);
+  font-family: "Roboto", sans-serif;
+  /* overflow-x: hidden; */
+}
+body.non-home {
+  background: #fff;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  line-height: 1.6em;
+  color: #fff;
+  margin-top: 2em;
+}
+
+h2 {
+  font-size: 35px;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+header {
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+}
+header.non-home {
+  box-shadow: 0 4px 6px -6px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  color: #cacaca;
+  height: 50px;
+  line-height: 50px;
+}
+
+@media only screen and (min-width: 786px) and (max-width: 1100px) {
+  nav {
+    width: 90%;
+    justify-content: space-around;
+  }
+  nav ul {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 786px) {
+  nav {
+    width: 100%;
+  }
+  nav > span {
+    display: none;
+  }
+  nav ul {
+    width: 100%;
+    position: absolute;
+    left: 5%;
+  }
+}
+
+nav span {
+  color: #838383;
+}
+
+nav ul {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 1;
+}
+
+nav a {
+  position: relative;
+  padding: 0 1em;
+  display: inline-block;
+}
+nav a.active-menu {
+  color: #80c0a4;
+}
+
+nav a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../resource/img/circle.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+nav li:nth-child(1) a::before {
+  top: 65%;
+  width: 102%;
+  height: 102%;
+}
+
+nav a:hover::before {
+  opacity: 1;
+}
+
+main {
+  margin: 10vh 0 10vh;
+}
+
+section {
+  min-height: 80vh;
+  max-width: 50em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  margin-top: 15vh;
+  position: relative;
+}
+
+section:nth-of-type(even) {
+  text-align: right;
+}
+
+@media only screen and (max-width: 600px) {
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  width: 125%;
+  height: 110%;
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: 1s ease;
+  top: -10%;
+  left: -10%;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1100px) {
+  section {
+    margin: 0 auto;
+
+    width: 80%;
+    text-align: left;
+    margin-top: 15px;
+    position: relative;
+  }
+  section::before {
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: 1s ease;
+    top: -5%;
+    left: -5%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  section {
+    margin: 80px auto;
+
+    width: 80%;
+    text-align: left;
+    margin-top: 15px;
+    position: relative;
+  }
+  section:nth-of-type(even) {
+    text-align: left;
+  }
+  section::before {
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: 1s ease;
+    top: -5%;
+    left: -5%;
+  }
+}
+
+section:hover::before {
+  opacity: 1;
+}
+
+main .article-list {
+  margin: 10vh 7vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 4vw;
+  row-gap: 5vw;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+}
+
+main .repo-list {
+  margin: 10vh 7vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  column-gap: 2vw;
+  row-gap: 3vw;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  main .repo-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+footer {
+  background: #000;
+  padding: 2em;
+  color: #fff;
+  text-align: right;
+
+  margin-right: 0;
+  margin-left: auto;
+  padding-right: 7vw;
+}
+
+footer p {
+  margin-top: 0;
+}
